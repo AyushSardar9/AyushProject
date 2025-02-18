@@ -13,9 +13,9 @@ pipeline {
                 echo 'Testing'
             }
         }
-        stage('Deploy') {
+        stage('Deploying site') {
             steps {
-                bat 'java Ayush'
+               publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: '', reportFiles: 'index.html', reportName: 'HTML Report', reportTitles: '', useWrapperFileDirectly: true])
                 echo 'Deploying'
             }
         }
